@@ -1,0 +1,131 @@
+.title {
+  font-size: 48px;
+}
+
+.wrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.buttonContainer{
+  display: flex;
+  justify-content: space-between;
+  width: 600px;
+  margin-top: 10px;
+}
+
+.container {
+  text-align: center;
+  display: flex;
+  background-color: rgb(0, 125, 153);
+  flex-direction: column;
+  border: 1px solid;
+  height: auto;
+  width: 350px;
+  margin-top: 10px;
+  padding: 4px;
+  gap: 4px;
+  border-radius: 8px;
+}
+
+.cardDetail {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  height: 100%;
+  padding: 4px;
+  gap: 4px;
+  border-radius: 8px;
+}
+
+.pokeImg{
+  width: 250px;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  height: 50%;
+  flex: 1;
+  background-color: rgb(0, 75, 92);
+  padding: 4px;
+  gap: 4px;
+  border-radius: 8px;
+}
+
+.content {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  flex: 1;
+  padding: 2px;
+  border-radius: 6px;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+}
+
+.type {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  padding: 2px;
+  width: 135px;
+  border-radius: 6px;
+}
+
+.title {
+  font-weight: 500;
+  font-size: 12px;
+  flex: 0.05;
+  color: white;
+}
+
+.stats {
+  background-color: rgb(0, 75, 92);
+  border-radius: 10px;
+}
+
+.statsDb {
+  background-color: rgb(0, 125, 153);
+  border-radius: 10px;
+  margin: 7px;
+  padding: 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  font-size: 25px;
+}
+
+.statRow {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.btnBack,
+.btnModify,
+.btnDelete {
+  width: 70px;
+  height: 40px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 550;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 1px 1px 1px rgba(23, 23, 23, 0.557);
+  cursor: pointer;
+  color: rgb(210, 0, 0);
+  transition: 0.075s;
+}
+
+.btnBack:hover,
+.btnDelete:hover,
+.btnModify:hover {
+  background-color: rgb(210, 0, 0);
+  color: rgb(255, 255, 255);
+}
