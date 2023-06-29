@@ -1,6 +1,7 @@
 import { legacy_createStore as createStore } from 'redux';
 import { applyMiddleware, compose } from "redux"; // el createStore estaba aca, pero me aparecia que estaba deprecated si no lo importaba como en la primer linea.
-import thunk from 'redux-thunk';
+// El "applyMiddleware" permite aplicar un middleware (en este caso, thunk) y el "compose" sirve para hacer la conexion con la extension del navegador (Redux dev tools).
+import thunk from 'redux-thunk'; // Con el thunk podemos hacer peticiones a la API
 import reducer from "./reducers";
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

@@ -42,12 +42,12 @@ const Detail = () => {
 
   useEffect(() => {
     setLoading(true);
-    dispatch(getDetail(currentId)).then((res) => {
-      console.log(pokemon)
+    dispatch(getDetail(currentId)).then((res) => { // Aca se monta el detail (componente),...
+      // console.log(pokemon)
       setLoading(false);
     });
-    return () => {
-      dispatch(clearDetail());
+    return () => {                                 // el return quiere decir que se desmonta ese componente...
+      dispatch(clearDetail());                     // y cuando se desmonte, limpiamos la propiedad "detail" del ESTADO GLOBAL, devolviendo (con la accion de clearDetail), un objeto vacio (puse un {} en el payload del action creator), para asi no figura el detail ANTERIOR por unos milisegundos y para que no quede cargado el detail de ese pokemon en el REDUX DEV TOOLS.
     };
   }, [dispatch, currentId]);
 

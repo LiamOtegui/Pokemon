@@ -14,7 +14,7 @@ import Filter from "../../components/Filter/Filter";
 // Home despacha/lleva la info al ESTADO GLOBAL (al store).
 // Los componentes pueden acceder a la info del ESTADO GLOBAL.
 
-// Con el useEffect se maneja el ciclo de vida del componente, para poder decirle que haga ALGO cuando se monta.
+// Con el useEffect se maneja el ciclo de vida del componente, para poder decirle que haga ALGO (un dispatch al estado global por ejemplo) cuando se monte el componente.
 // Con el useDispatch despachamos la info al ESTADO GLOBAL.
 
 const Home = () => {
@@ -24,8 +24,8 @@ const Home = () => {
   const searchParams = new URLSearchParams(location.search); // y luego se crea una instancia de URLSearchParams a partir de la propiedad search de la ubicación...
   const search = searchParams.get("search"); // esto permite manipular los parámetros de búsqueda de la URL y obtener valores específicos.
 
-  const dispatch = useDispatch();
-  const pokemons = useSelector((state) => state.pokemons); // El useSelector se utiliza para que este atento al ESTADO GLOBAL.
+  const dispatch = useDispatch(); // El useDispatch es para enviar info. al ESTADO GLOBAL.
+  const pokemons = useSelector((state) => state.pokemons); // El useSelector se utiliza para traer info. del ESTADO GLOBAL (por ejemplo aca me traigo la info de la propiedad pokemons del ESTADO GLOBAL).
   const filteredPokemons = useSelector((state) => state.filteredPokemons);
 
   const [currentPage, setCurrentPage] = useState(1);
@@ -69,9 +69,14 @@ const Home = () => {
         <Filter pokemons={pokemons} />
       </div>
       <div className={style.cardContainer}>
-        {pokeInPage.map((poke) => (
-          <Card key={poke.id} poke={poke} />
-        ))}
+        {
+          pokeInPage.map((poke) => (
+            <Card
+              key={poke.id}
+              poke={poke}
+            />
+          ))
+        }
       </div>
     </div>
   );
