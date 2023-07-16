@@ -43,11 +43,10 @@ const Detail = () => {
   useEffect(() => {
     setLoading(true);
     dispatch(getDetail(currentId)).then((res) => { // Aca se monta el detail (componente),...
-      // console.log(pokemon)
       setLoading(false);
     });
     return () => {                                 // el return quiere decir que se desmonta ese componente...
-      dispatch(clearDetail());                     // y cuando se desmonte, limpiamos la propiedad "detail" del ESTADO GLOBAL, devolviendo (con la accion de clearDetail), un objeto vacio (puse un {} en el payload del action creator), para asi no figura el detail ANTERIOR por unos milisegundos y para que no quede cargado el detail de ese pokemon en el REDUX DEV TOOLS.
+      dispatch(clearDetail());                     // y cuando se desmonte, limpiamos la propiedad "detail" del ESTADO GLOBAL, devolviendo (con la accion de clearDetail), un objeto vacio (en el reducer puse un {} en vez de action.payload), para asi no figura el detail ANTERIOR por unos milisegundos y para que no quede cargado el detail de ese pokemon en el REDUX DEV TOOLS.
     };
   }, [dispatch, currentId]);
 
@@ -76,9 +75,7 @@ const Detail = () => {
         </div>
         <div className={style.container}>
           <div className={style.cardDetail}>
-            <div
-              className={style.section}
-            >
+            <div className={style.section}>
               <div className={style.content} style={{ fontSize: "32px" }}>
                 {pokemon.name}
               </div>

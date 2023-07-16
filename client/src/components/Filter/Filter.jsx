@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { toTitleCase } from "../../utils/helpers";
+
 import { sortPokemons, filterPokemons, clearFilter } from "../../redux/actions";
 import style from './Filter.module.css'
 
